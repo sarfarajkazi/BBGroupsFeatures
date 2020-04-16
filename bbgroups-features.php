@@ -22,8 +22,8 @@ define( 'BBGF_NAME', 'BBGroups Features' );
  */
 /* Only load code that needs BuddyPress to run once BP is loaded and initialized. */
 function check_plugin_with_bb() {
-	require_once 'includes/BBGF_Class.php';
-	BBGF_Class::init();
+	require_once 'includes/class.main.loader.php';
+	BBGF_LOADER::init();
 }
 
 if ( BBGFValidateDependencies( BBGF_MAIN_PLUGIN ) ) {
