@@ -1,13 +1,13 @@
 <?php
 /*
-Plugin Name: BBGroups Features
+Plugin Name: BB Groups Features
 Plugin URI: http://wordpress.org
 Description: Adds additional features to BuddyBoss Platform groups.
 Version: 1.0
 Tags: buddypress
 Author: Sarfaraj Kazi
 Author URI: http://wordpress.org
-Text Domain: BBGroups-Feature
+Text Domain: BB-Groups-Feature
 */
 /* don't call the file directly */
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,7 +16,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'BBGF_FILE', __FILE__ );
 define( 'BBGF_MAIN_PLUGIN', "buddyboss-platform/bp-loader.php" );
-define( 'BBGF_NAME', 'BBGroups Features' );
+define( 'BBGF_NAME', 'BB Groups Features' );
+
 /**
  * Initial plugin
  */
@@ -39,7 +40,6 @@ if ( BBGFValidateDependencies( BBGF_MAIN_PLUGIN ) ) {
  *
  * @since 1.0.0
  *
- * @see __construct relied on
  * @return boolean if true then it loads the file else it throws dependency error.
  */
 function BBGFValidateDependencies($name) {

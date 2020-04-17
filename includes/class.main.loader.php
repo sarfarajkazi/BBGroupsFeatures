@@ -80,8 +80,23 @@ class BBGF_LOADER {
 	    define('BBGF_INCLUDES_FRONT', trailingslashit(BBGF_INCLUDES . 'front'));
         define('BBGF_ADMIN_TEMPLATES',trailingslashit( BBGF_PATH . 'includes/admin/templates'));
         define('BBGF_FRONT_TEMPLATES', BBGF_PATH . trailingslashit('includes/front/templates'));
-        define('TEXT_DOMAIN', "BBGroups-Feature");
     }
+
+	/**
+	 * What type of request is this?
+	 *
+	 * @param  string $type admin or frontend.
+	 * @return bool
+	 */
+	private function bbgf_is_request($type)
+	{
+		switch ($type) {
+			case 'admin':
+				return (is_admin() || defined('DOING_AJAX'));
+			case 'frontend':
+				return (!is_admin() || defined('DOING_AJAX'));
+		}
+	}
 
     /**
      * Include the required files
@@ -92,6 +107,8 @@ class BBGF_LOADER {
 	    require_once BBGF_CLASSES.'helper.php';
 	    require_once BBGF_CLASSES.'class.install.php';
 	    require_once BBGF_INCLUDES_FRONT.'class.filters.groups.php';
+	    require_once BBGF_INCLUDES_FRONT.'class.load.files.php';
+	    require_once BBGF_INCLUDES_FRONT.'class.posts.template.php';
     }
 
     /**
@@ -102,10 +119,15 @@ class BBGF_LOADER {
      * @return void
      */
     private function bbgf_instantiate() {
-        if (is_admin()) {
-            new BBGF_INSTALL();
-        }
-        new BBGF_GROUPS();
+	    if ($this->bbgf_is_request('admin')) {
+		    new BBGF_INSTALL();
+	    }
+	    if ($this->bbgf_is_request('frontend')) {
+		    new BBGF_LOAD_FILES();
+		    new BBGF_GROUPS();
+		    new BBGF_POSTS();
+
+	    }
     }
 
     /**
@@ -117,7 +139,6 @@ class BBGF_LOADER {
      */
     private function bbgf_init_actions() {
     }
-
 
 	/**
 	 * Check components Dependence's

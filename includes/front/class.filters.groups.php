@@ -1,13 +1,13 @@
 <?php
 
 /**
- * BBGF Front
+ * BBGF_GROUPS CLASS
  *
- * Manage Actions
+ * Manage Filters
  *
  * @since 1.0.0
  */
-class BBGF_GROUPS {
+class BBGF_GROUPS{
 
 	/**
 	 * Initial class
@@ -106,9 +106,7 @@ class BBGF_GROUPS {
 			$old_counts  = $count;
 			$admin_count = $this->get_admins_list();
 			$count       = $old_counts - sizeof( $admin_count );
-
 		}
-
 		return $count;
 	}
 }
