@@ -13,7 +13,7 @@ class BBGF_LOAD_FILES {
 
 	// Localization
 	function bbgf_localization() {
-		load_plugin_textdomain( 'BB-Groups-Feature', false, dirname( plugin_basename( __FILE__ ) ) . '/langs/' );
+		load_plugin_textdomain( 'BB-Groups-Feature', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
 	}
 

@@ -34,11 +34,6 @@ To install this plugin, you will need to setup wordpress project in your compute
     3. Activate the plugin from the Plugin dashboard.
 ```
 
-## How to use it ?
-
-
-
-
 ## Author
 
 **Sarfaraj Kazi** 
