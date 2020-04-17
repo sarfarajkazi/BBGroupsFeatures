@@ -1,0 +1,35 @@
+#: includes/admin/templates/dependency-error.php:19
+#, php-format
+msgid ""
+" </strong> - BuddyBoss Courseware dependency error: <a href=\"%1$s\">%2$s "
+"has to be activated</a>!"
+msgstr ""
+
+#. Description of the plugin
+msgid "Adds additional features to BuddyBoss Platform groups."
+msgstr ""
+
+#: includes/front/class.posts.template.php:66
+msgid "Author"
+msgstr ""
+
+#. Name of the plugin
+msgid "BB Groups Features"
+msgstr ""
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "http://wordpress.org"
+msgstr ""
+
+#: includes/admin/templates/dependency-error.php:11
+msgid "plugin requires"
+msgstr ""
+
+#. Author of the plugin
+msgid "Sarfaraj Kazi"
+msgstr ""
+
+#: includes/front/class.posts.template.php:65
+msgid "Votes"
+msgstr ""
