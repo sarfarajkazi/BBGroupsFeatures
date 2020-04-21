@@ -119,6 +119,8 @@ class BBGF_LOADER {
 		switch ( $type ) {
 			case 'admin':
 				return ( is_admin() || defined( 'DOING_AJAX' ) );
+			case 'frontend':
+				return ( ! is_admin() || defined( 'DOING_AJAX' ) );
 		}
 
 		return ( ! is_admin() || defined( 'DOING_AJAX' ) );
