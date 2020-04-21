@@ -38,15 +38,16 @@ if ( BBGFValidateDependencies( BBGF_MAIN_PLUGIN ) ) {
  * Validate Dependence's
  * checks whether BuddyBoss is active or not.
  *
+ * @return boolean if true then it loads the file else it throws dependency error.
  * @since 1.0.0
  *
- * @return boolean if true then it loads the file else it throws dependency error.
  */
-function BBGFValidateDependencies($name) {
+function BBGFValidateDependencies( $name ) {
 	$arrActivePlugins = (array) get_option( 'active_plugins', array() );
 	if ( is_multisite() ) {
-		$arrActivePlugins = array_merge( $arrActivePlugins, get_site_option( 'active_sitewide_plugins',array() ) );
+		$arrActivePlugins = array_merge( $arrActivePlugins, get_site_option( 'active_sitewide_plugins', array() ) );
 	}
-	return in_array($name, $arrActivePlugins) || array_key_exists( BBGF_MAIN_PLUGIN, $arrActivePlugins );
+
+	return in_array( $name, $arrActivePlugins ) || array_key_exists( BBGF_MAIN_PLUGIN, $arrActivePlugins );
 }
 

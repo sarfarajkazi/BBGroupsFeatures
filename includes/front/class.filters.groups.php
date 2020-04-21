@@ -7,7 +7,7 @@
  *
  * @since 1.0.0
  */
-class BBGF_GROUPS{
+class BBGF_GROUPS {
 
 	/**
 	 * Initial class
@@ -15,7 +15,7 @@ class BBGF_GROUPS{
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-		add_filter( 'bp_group_member_query_group_member_ids', array( $this, 'check_and_remove_admins' ), 99, 2 );
+		add_filter( 'bp_group_member_query_group_member_ids', array( $this, 'check_and_remove_admins' ), 99 );
 		add_filter( 'bp_get_group_member_count', array( $this, 'bp_get_group_member_count_callback' ), 99 );
 		add_filter( 'bp_nouveau_get_nav_count', array( $this, 'bp_get_group_total_members_callback' ), 99, 3 );
 	}
@@ -29,7 +29,7 @@ class BBGF_GROUPS{
 	 *
 	 * @return array $member_ids User IDs of relevant group member ids.
 	 */
-	function check_and_remove_admins( $member_ids, $object ) {
+	function check_and_remove_admins( $member_ids ) {
 		if ( empty( $member_ids ) ) {
 			return $member_ids;
 		}
@@ -46,7 +46,6 @@ class BBGF_GROUPS{
 	 *
 	 * @return array $admin_user User IDs of relevant group member ids.
 	 */
-
 	function get_admins_list( $group_id = false ) {
 		global $wpdb;
 		$bp            = buddypress();
@@ -107,6 +106,7 @@ class BBGF_GROUPS{
 			$admin_count = $this->get_admins_list();
 			$count       = $old_counts - sizeof( $admin_count );
 		}
+
 		return $count;
 	}
 }
