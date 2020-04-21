@@ -1,9 +1,10 @@
 <?php
 
 /**
- * BBGF Front
+ * BBGF_POSTS
  *
- * Manage Actions
+ * Display latest posts added by group admin
+ * Extends BP_Group_Extension for using core functions
  *
  * @since 1.0.0
  */
